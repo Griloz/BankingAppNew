@@ -15,6 +15,12 @@ def test_login_page(driver):
         By.CSS_SELECTOR, 'div.heading > h1').text == 'Login'
 
 
+def test_Sign_Up(driver):
+    # check if Login text is displayed
+    assert driver.find_element(
+        By.XPATH, '//div/span/a').text == 'Sign Up'
+
+
 def test_user_login(driver):
     # create an instance/object of LoginPage class
     login_page = LoginPage(driver)
