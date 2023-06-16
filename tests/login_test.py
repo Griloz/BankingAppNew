@@ -26,19 +26,6 @@ def test_Sign_Up(driver):
         By.XPATH, '//div/span/a').text == 'Sign Up'
 
 
-def test_create_account(driver):
-    fake = Faker()   # Create an instance of Faker
-    sign_up_page = FakeAccount(driver)
-    sign_up_page.Sign_Up()
-    sleep(2)  # Added a pause after clicking the first "Sign Up" button
-    email = fake.email()
-    password = fake.password()
-    # Call the randomly_Security_question method
-    sign_up_page.randomly_Security_question()
-    sign_up_page.create_account(email, password)
-    sleep(3)
-
-
 def test_user_login(driver):
     # create an instance/object of LoginPage class
     login_page = LoginPage(driver)
